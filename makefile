@@ -1,5 +1,5 @@
 decode : decode.o libcypher.so
-		gcc -m32 decode.o -l -lcypher - decode
+		gcc -m32 decode.o -L. -WL,-rpath='$$ORIGIN' -lcypher - decode
 
 .PHONY: clean
 clean: 
